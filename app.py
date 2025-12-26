@@ -21,11 +21,9 @@ col1.metric("🏆 Best Model", best['Model'])
 col2.metric("✅ Best R²", f"{best['R2-Test']:.3f}")
 col3.metric("📉 Lowest RMSE", f"{best['RMSE-Test']:.3f}")
 
-# Results table
+# Results table (SIMPLE - no styling error)
 st.subheader("📊 Model Performance")
-st.dataframe(Results.style
-    .background_gradient(subset=['R2-Test'], cmap='Greens')
-    .background_gradient(subset=['RMSE-Test'], cmap='Reds_r'))
+st.dataframe(Results)
 
 # Charts
 col1, col2 = st.columns(2)
@@ -38,3 +36,4 @@ with col2:
 
 st.markdown("---")
 st.caption("NASA CMAPSS Dataset - Powered by Streamlit")
+
